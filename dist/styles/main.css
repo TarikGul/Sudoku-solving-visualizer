@@ -1,4 +1,74 @@
+.body {
+    height: 100vh
+}
 .main-container {
     background-image: linear-gradient(to right, #6B3074, #7268A6 50%, #86A3C3 75%);
-    height: 100vh;
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
 }
+
+.main-left-container {
+    width: 50%;
+    height: 100%;
+    border: 1px solid black;
+    /* padding: 50px; */
+    display: flex;
+    flex-direction: column;
+}
+
+.main-left-top-container {
+    margin: 50px;
+    margin-bottom: 20px;
+    height: 20%;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+.main-left-bottom-container {
+    margin: 50px;
+    border: 1px solid black;
+    height: calc(100% - 40%);
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+.main-right-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+
+.main-right-header-container {
+    margin: 50px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    height: 13%;
+}
+
+.sudoku-main-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+    height: calc(100% - 33.5%);
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px;
+    border-radius: 5px;
+}
+
+.sudoku-board {
+    border: 1px solid black;
+    width: 90%;
+    margin: 20px;
+}
+
+
+
+

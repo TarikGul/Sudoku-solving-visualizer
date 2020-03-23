@@ -8,7 +8,7 @@ class Board {
         //creating the groundwork for the new sudoku puzzle
         this.grid = this.createGrid(9, 9);
         this.fillNumbers();
-        this.solver1 = new Solver(this.grid);
+        this.solver1 = new Backtrace(this.grid);
         this.solved = this.solver1.solver()
         this.puzzle = this.generatePuzzle();
         //----------------------------------//
