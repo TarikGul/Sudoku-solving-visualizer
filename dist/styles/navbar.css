@@ -1,23 +1,34 @@
 .navbar-container {
     display: flex;
     flex-direction: row;
-    height: 80px;
+    justify-content: space-between;
+    height: 50px;
     width: 100%;
+    border: 1px solid black;
+    background-image: linear-gradient(to left, #D8E0BB, #B6CEC7 50% ,#86A3C3 75%);
 }
 
 .navbar-left-container {
     display: flex;
-    width: 40%;
+    width: 30%;
     justify-content: space-around;
+    height: 100%;
 }
 
 .sudoku-logo {
-    font-size: 32px;
+    width: 200px;
+    /* height: 50px; */
+}
+
+.sudoku-png {
+    
 }
 
 .custom-select {
   position: relative;
   font-family: Arial;
+  width: 220px;
+  /* height: 100%; */
 }
 
 .custom-select select {
@@ -25,7 +36,7 @@
 }
 
 .select-selected {
-  background-color: DodgerBlue;
+  background-color: #D8E0BB;
 }
 
 /* Style the arrow inside the select element: */
