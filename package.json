@@ -1,5 +1,5 @@
 {
-  "name": "aviation-visualizer",
+  "name": "sudoku-visualizer",
   "version": "1.0.0",
   "description": "plane visualizer",
   "main": "index.js",
