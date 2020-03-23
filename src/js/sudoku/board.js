@@ -1,5 +1,5 @@
 import Tile from './tile';
-import Solver from './solver';
+import Backtrace from './backtrace';
 import _ from 'lodash'
 
 class Board {

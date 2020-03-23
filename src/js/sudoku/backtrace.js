@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-class Solver {
+class Backtrace {
     constructor(grid) {
         this.board = grid
         this.orderedPos = [];
@@ -85,4 +85,4 @@ class Solver {
     }
 }
 
-export default Solver;
+export default Backtrace;
