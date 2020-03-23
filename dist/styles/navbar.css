@@ -1,12 +1,20 @@
-/* navbar */
-
 .navbar-container {
     display: flex;
+    flex-direction: row;
     height: 80px;
     width: 100%;
 }
 
-/* The container must be positioned relative: */
+.navbar-left-container {
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+}
+
+.sudoku-logo {
+    font-size: 32px;
+}
+
 .custom-select {
   position: relative;
   font-family: Arial;
