@@ -63,11 +63,22 @@
     border-radius: 5px;
 }
 
-.sudoku-board {
+.sudoku-board-inner-container {
+    display: flex;
+    flex-direction: row;
     border: 1px solid black;
     width: 90%;
     margin: 20px;
     
+}
+
+.sudoku-board {
+    transform: translateY(2%);
+}
+
+.right-sudoku-contianer {
+    background-color: gray;
+    width: 100%;
 }
 
 .grid-row {
@@ -76,10 +87,9 @@
     flex-direction: row;
 }
 .grid-item {
-    border: 1px solid black;
+    border: 1px solid gray;
     height: 60px;
     width: 60px;
-    background-color: red;
 }
 
 

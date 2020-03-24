@@ -1,5 +1,5 @@
-import Board from './js/features/sudoku_board'
+import SudokuBoard from './js/features/sudoku_board'
 
-const board = new Board(9, 9)
+const board = new SudokuBoard(9, 9)
 
 board.makeRows();
