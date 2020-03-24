@@ -18,7 +18,6 @@ class Tile {
         } else {
             this.gridAttribute = "gray";
         }
-
     }
 
 }

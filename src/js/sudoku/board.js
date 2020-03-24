@@ -14,7 +14,7 @@ class Board {
         //----------------------------------//
 
         //----------------------------------//
-        this.puzzleSolved = new Solver(_.cloneDeep(this.puzzle));
+        this.puzzleSolved = new Backtrace(_.cloneDeep(this.puzzle));
         this.puzzleSolved.solver();
         this.orderedPos = this.puzzleSolved.orderedPos;
         this.orderedVal = this.puzzleSolved.orderedVal;
