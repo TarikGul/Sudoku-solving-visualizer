@@ -105,4 +105,16 @@
     align-items: center;
 }
 
+.solve-button-container {
+    transform: translateY(40%);
+    width: 10%;
+}
 
+.solve-button {
+    width: 100px;
+    height: 40px; 
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-size: 20px;
+}
