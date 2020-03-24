@@ -17,15 +17,7 @@
                 <div class="sudoku-logo">
                     <!-- <img class="sudoku-png" src="images/sudoku-vis.png" alt=""> -->
                 </div>
-                <div class="custom-select">
-                    <select class="algo-dropdown">
-                        <option value="0">Select a Algorithm:</option>
-                        <option value="1">Backtracing(Recursive)</option>
-                        <option value="2">Knuths Algorithm X</option>
-                        <option value="2">Stochastic Search</option>
-                        <option value="2">Constraint</option>
-                    </select>
-                </div>
+                
             </div>
             <div class="navbar-right-container">
                 github link
@@ -45,12 +37,30 @@
             </div>
             <div class="main-right-container">
                 <div class="main-right-header-container">
-
+                    <div class="solve-button-container">
+                        <button class="solve-button"> Solve </button>
+                    </div>
+                    <div class="algo-diff-container">
+                        <div class="custom-select">
+                            <select class="algo-dropdown">
+                                <option value="0">Select a Algorithm:</option>
+                                <option value="1">Backtracing(Recursive)</option>
+                                <option value="2">Knuths Algorithm X</option>
+                                <option value="2">Stochastic Search</option>
+                                <option value="2">Constraint</option>
+                            </select>
+                        </div>
+                        <div class="difficulty-container">
+                            <button class="easy">Easy</button>
+                            <button class="medium">Medium</button>
+                            <button class="hard">Hard</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="sudoku-main-container">
                     <!-- <div class="sudoku-board-inner-container"> -->
                         <div class="sudoku-board">
-                            
+
                         </div>
                     <!-- </div> -->
                 </div>

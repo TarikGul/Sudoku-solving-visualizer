@@ -90,5 +90,19 @@
     background-color: rgb(230, 230, 230);
 }
 
+.main-right-header-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.algo-diff-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.difficulty-container {
+    display: flex;
+    align-items: center;
+}
 
 
