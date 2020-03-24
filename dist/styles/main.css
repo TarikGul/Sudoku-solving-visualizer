@@ -2,7 +2,8 @@
     height: 100vh
 }
 .main-container {
-    background-image: linear-gradient(to right, #6B3074, #7268A6 50%, #86A3C3 75%);
+    /* background-image: linear-gradient(to right, #6B3074, #7268A6 50%, #86A3C3 75%); */
+    background-color: rgb(96, 188, 231);
     width: 100%;
     height: calc(100vh - 60px);
     display: flex;
@@ -21,16 +22,14 @@
     margin-bottom: 20px;
     height: 20%;
     background-color: white;
-    border-radius: 5px;
-    box-shadow: 1px 1px 1px 1px;
+    box-shadow: rgb(38, 169, 202) 1px 1px 1px 1px;
 }
 
 .main-left-bottom-container {
     margin: 50px;
     height: calc(100% - 40%);
     background-color: white;
-    border-radius: 5px;
-    box-shadow: 1px 1px 1px 1px;
+    box-shadow: rgb(38, 169, 202) 1px 1px 1px 1px;
 }
 
 .main-right-container {
@@ -53,10 +52,8 @@
     justify-content: space-around;
     margin: 50px;
     height: calc(100% - 33.5%);
-    border: 1px solid black;
     background-color: white;
-    box-shadow: 1px 1px 1px 1px;
-    border-radius: 5px;
+    box-shadow: rgb(38, 169, 202) 1px 1px 1px 1px;
 }
 
 /* .sudoku-board-inner-container {
@@ -90,6 +87,10 @@
     background-color: rgb(230, 230, 230);
 }
 
+.white {
+    background-color: white;
+}
+
 .main-right-header-container {
     display: flex;
     justify-content: space-evenly;
@@ -98,15 +99,18 @@
 .algo-diff-container {
     display: flex;
     flex-direction: column;
+    transform: translateY(20%);
+    align-items: center;
 }
 
 .difficulty-container {
     display: flex;
     align-items: center;
+    transform: translateY(60%);
 }
 
 .solve-button-container {
-    transform: translateY(40%);
+    transform: translateY(30%);
     width: 10%;
 }
 
@@ -117,4 +121,17 @@
     outline: none;
     border-radius: 3px;
     font-size: 20px;
+    cursor: pointer;
+}
+
+.solve-button:hover {
+    background-color: teal;
+}
+
+.difficulty-container > button {
+    padding: 10px;
+    outline: none;
+    border: none;
+    border: 1px solid rgb(212, 212, 212);
+    cursor: pointer;
 }

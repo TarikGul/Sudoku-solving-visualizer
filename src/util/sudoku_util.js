@@ -13,6 +13,8 @@ const sudokuUtil = {
                 }
                 if (tile.gridAttribute === 'gray') {
                     div.classList.add("gray")
+                } else {
+                    div.classList.add("white")
                 }
             }
         }
