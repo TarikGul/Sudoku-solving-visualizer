@@ -6,7 +6,6 @@ class SudokuBoard {
 
     makeRows() {
         const container = document.getElementsByClassName('sudoku-board')[0]
-        console.log("the dolphin has")
         for (let i = 0; i < this.rowLen; i += 1) {
             const row = document.createElement('div');
             row.className = 'grid-row';
