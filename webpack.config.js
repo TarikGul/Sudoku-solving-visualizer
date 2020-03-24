@@ -2,9 +2,9 @@ const path = require('path');
 
 module.exports = {
     context: __dirname,
-    entry: './src/index.jsx',
+    entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
     module: {
@@ -15,7 +15,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     query: {
-                        presets: ['@babel/env', '@babel/react']
+                        presets: ['@babel/env']
                     }
                 },
             }
