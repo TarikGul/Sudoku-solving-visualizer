@@ -59,32 +59,28 @@
     border-radius: 5px;
 }
 
-.sudoku-board-inner-container {
+/* .sudoku-board-inner-container {
     display: flex;
     flex-direction: row;
     border: 1px solid black;
     width: 90%;
     margin: 20px;
     
-}
+} */
 
 .sudoku-board {
-    transform: translateY(2%);
-}
-
-.right-sudoku-contianer {
-    background-color: gray;
-    width: 100%;
+    margin-top: 7%;
 }
 
 .grid-row {
+    width: 100%;
     display: flex;
     flex-direction: row;
 }
 .grid-item {
     border: 1px solid gray;
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;;
 }
 
 .gray {
