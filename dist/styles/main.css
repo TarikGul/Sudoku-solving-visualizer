@@ -78,13 +78,16 @@
     flex-direction: row;
 }
 .grid-item {
+    display: inline-block;
     border: 1px solid gray;
     height: 50px;
-    width: 50px;;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
 }
 
 .gray {
-    background-color: gray;
+    background-color: rgb(230, 230, 230);
 }
 
 
