@@ -10,7 +10,6 @@ class Visualize {
         this.board = board
         this.orderedTraversal;
         this.orderedPositions;
-        console.log(this.board)
     }
 
     // This is where we choose which algorithm is going to be solved an initialized
@@ -30,10 +29,9 @@ class Visualize {
             if (i === this.orderedTraversal.length) {
                 return;
             }
-            // console.log(this.orderedTraversal[i])
             const nextPos = this.orderedPositions[i].parsePos();
-
             const nextVal = this.orderedTraversal[i];
+
             let [cur_x, cur_y] = this.orderedPositions[i];
             setTimeout(() => {
                 const tile = document.getElementById(nextPos);
@@ -42,7 +40,6 @@ class Visualize {
                 } else {
                     tile.innerText = `${nextVal}`
                 }
-                console.log(tile.innerText)
                 this.board.puzzle[cur_x][cur_y].val = nextVal
                 loopStep();
                 i++

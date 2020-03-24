@@ -16,6 +16,14 @@ const sudokuUtil = {
             }
         }
     },
+    clearBoard: (num) => {
+        for (let i = 0; i < num; i++) {
+            for (let j = 0; j < num; j++) {
+                const div = document.getElementById(`${i}-${j}`)
+                div.innerText = ''
+            }
+        }
+    }
 }
 
 export default sudokuUtil;

@@ -1,4 +1,4 @@
-class SudokuBoard {
+class CreateBoard {
     constructor(row, col) {
         this.rowLen = row;
         this.colLen = col;
@@ -21,4 +21,4 @@ class SudokuBoard {
     }
 }
 
-export default SudokuBoard;
+export default CreateBoard;
