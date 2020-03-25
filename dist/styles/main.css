@@ -11,9 +11,9 @@
         height: calc(100vh - 60px);
     }
 
-    .main-container > div {
+    /* .main-container > div {
         padding-top: 10px;
-    }
+    } */
 
     .main-right-header-container {
         margin: 50px;
@@ -60,13 +60,14 @@
         align-items: center;
     }
 
-    .algo-diff-container > div {
+    /* .algo-diff-container > div {
         padding: 10px;
-    }
+    } */
 
     .difficulty-container {
         display: flex;
         align-items: center;
+        width: 100%;
     }
 
     .solve-button-container {
@@ -92,10 +93,8 @@
     }
 
     .difficulty-container > button {
-        padding: 10px;
-        margin-right: 10px;
-        margin-left: 10px;
-        border-radius: 3px;
+        height: 45px;
+        width: 33.3%;
         outline: none;
         border: none;
         cursor: pointer;
