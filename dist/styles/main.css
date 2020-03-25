@@ -1,84 +1,126 @@
-.body {
+@media only screen and (max-width: 600px) {
+    .body {
+        height: 100vh
+    }
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(96, 188, 231);
+        width: 100%;
+        height: calc(100vh - 60px);
+    }
+
+    .main-right-header-container {
+        margin: 50px;
+        margin-bottom: 20px;
+        border: 1px solid black;
+        height: 13%;
+    }
+
+    .sudoku-board {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid-row {
+        /* width: 100%; */
+        display: flex;
+        flex-direction: row;
+    }
+    .grid-item {
+        border: 1px solid rgb(141, 141, 141);
+        height: 39px;
+        width: 39px;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .gray {
+        background-color: rgb(212, 212, 212);
+    }
+
+    .white {
+        background-color: white;
+    }
+
+    .main-right-header-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .algo-diff-container {
+        display: flex;
+        flex-direction: column;
+        transform: translateY(20%);
+        align-items: center;
+    }
+
+    .difficulty-container {
+        display: flex;
+        align-items: center;
+        transform: translateY(60%);
+    }
+
+    .solve-button-container {
+        transform: translateY(30%);
+        width: 10%;
+    }
+
+    .solve-button {
+        width: 100px;
+        height: 40px; 
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .solve-button:hover {
+        background-color: teal;
+    }
+
+    .difficulty-container > button {
+        padding: 10px;
+        outline: none;
+        border: none;
+        border: 1px solid rgb(212, 212, 212);
+        cursor: pointer;
+    }
+}
+/* .body {
     height: 100vh
 }
 .main-container {
-    /* background-image: linear-gradient(to right, #6B3074, #7268A6 50%, #86A3C3 75%); */
+    display: flex;
+    flex-direction: column;
     background-color: rgb(96, 188, 231);
     width: 100%;
     height: calc(100vh - 60px);
-    display: flex;
 }
-
-.main-left-container {
-    width: 50%;
-    height: 100%;
-    /* padding: 50px; */
-    display: flex;
-    flex-direction: column;
-}
-
-.main-left-top-container {
-    margin: 50px;
-    margin-bottom: 20px;
-    height: 20%;
-    background-color: white;
-    box-shadow: rgb(38, 169, 202) 1px 1px 1px 1px;
-}
-
-.main-left-bottom-container {
-    margin: 50px;
-    height: calc(100% - 40%);
-    background-color: white;
-    box-shadow: rgb(38, 169, 202) 1px 1px 1px 1px;
-}
-
-.main-right-container {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 100%;
-}
-
 
 .main-right-header-container {
     margin: 50px;
     margin-bottom: 20px;
-    border: 1px solid black;
     height: 13%;
 }
 
-.sudoku-main-container {
-    display: flex;
-    justify-content: space-around;
-    margin: 50px;
-    height: calc(100% - 33.5%);
-    background-color: white;
-    box-shadow: rgb(38, 169, 202) 1px 1px 1px 1px;
-}
-
-/* .sudoku-board-inner-container {
-    display: flex;
-    flex-direction: row;
-    border: 1px solid black;
-    width: 90%;
-    margin: 20px;
-    
-} */
-
 .sudoku-board {
-    margin-top: 7%;
+    display: flex;
+    flex-direction: column;
 }
 
 .grid-row {
     width: 100%;
     display: flex;
     flex-direction: row;
-}
+} */
+/* 
 .grid-item {
-    display: inline-block;
-    border: 1px solid gray;
-    height: 50px;
-    width: 50px;
+    border: 1px solid rgb(214, 214, 214);
+    height: 30px;
+    width: 30px;
     text-align: center;
     line-height: 50px;
 }
@@ -134,4 +176,4 @@
     border: none;
     border: 1px solid rgb(212, 212, 212);
     cursor: pointer;
-}
+} */
