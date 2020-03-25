@@ -10,6 +10,7 @@ class Visualize {
         this.board = board
         this.orderedTraversal;
         this.orderedPositions;
+        this.reset = false;
     }
 
     // This is where we choose which algorithm is going to be solved an initialized
@@ -28,6 +29,9 @@ class Visualize {
         const loopStep = () => {
             if (i === this.orderedTraversal.length) {
                 return;
+            } else if (this.reset === true) {
+                this.reset = false
+                return;
             }
             const nextPos = this.orderedPositions[i].parsePos();
             const nextVal = this.orderedTraversal[i];
@@ -36,16 +40,20 @@ class Visualize {
             setTimeout(() => {
                 const tile = document.getElementById(nextPos);
                 if (nextVal === 0) {
-                    tile.innerText = ''
+                    tile.innerText = '';
                 } else {
-                    tile.innerText = `${nextVal}`
+                    tile.innerText = `${nextVal}`;
                 }
-                this.board.puzzle[cur_x][cur_y].val = nextVal
+                this.board.puzzle[cur_x][cur_y].val = nextVal;
                 loopStep();
                 i++
-            }, 50)
+            }, 5)
         }
         loopStep();
+    }
+
+    abort() {   
+        this.reset = true
     }
 }
 

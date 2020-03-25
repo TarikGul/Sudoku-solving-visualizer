@@ -3,13 +3,14 @@ import CreateBoard from './js/features/create_board'
 import sudokuUtil from './util/sudoku_util'
 import Visualize from './js/sudoku/visualize'
 //Set the grid up on the page
-const boardGrid = new CreateBoard(9, 9)
+const boardGrid = new CreateBoard(9, 9);
 boardGrid.makeRows();
 
 //Create the default sudoku on the grid
 // let board = new Board('easy');
 let board;
 let vis;
+let currentDifficulty;
 
 const initalizeBoard = (diff) => {
     board = new Board(diff)
@@ -20,16 +21,34 @@ const initalizeBoard = (diff) => {
 }
 initalizeBoard('easy');
 
+// When a difficulty is hit it will reset the board
 document.addEventListener('click', (e) => {
     if (e.target.id === 'easy') {
-        initalizeBoard('easy')
+        currentDifficulty = 'easy';
+        vis.abort();
+        initalizeBoard('easy');
     } else if (e.target.id === 'medium') {
-        initalizeBoard('medium')
+        currentDifficulty = 'medium';
+        vis.abort();
+        initalizeBoard('medium');
     } else if (e.target.id === 'hard') {
-        initalizeBoard('hard')
+        currentDifficulty = 'hard';
+        vis.abort();
+        initalizeBoard('hard');
+    } 
+});
+// When the reset button is hit to reset the board on the most
+// recent difficulty
+const reset = document.getElementById('reset')
+reset.addEventListener('click', (e) => {
+    if (currentDifficulty === undefined) {
+        vis.abort();
+        initalizeBoard('easy');
+    } else if (e.target.id === 'reset') {
+        vis.abort();
+        initalizeBoard(currentDifficulty);
     }
-    console.log(e.target.id)
-})
+}); 
 
 
 
@@ -41,7 +60,6 @@ document.addEventListener('click', (e) => {
 
 const solve = document.getElementById('solve-1')
 solve.addEventListener('click', () => {
-    console.log('clicked')
     vis.visualizeAlgo();
 });
 
