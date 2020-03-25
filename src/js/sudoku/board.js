@@ -14,28 +14,31 @@ class Board {
         //----------------------------------//
 
         //----------------------------------//
-        this.puzzleSolved = new Backtrace(_.cloneDeep(this.puzzle));
-        this.puzzleSolved.solver();
-        this.orderedPos = this.puzzleSolved.orderedPos;
-        this.orderedVal = this.puzzleSolved.orderedVal;
+        // this.puzzleSolved = new Backtrace(_.cloneDeep(this.puzzle));
+        // this.puzzleSolved.solver();
+        // this.orderedPos = this.puzzleSolved.orderedPos;
+        // this.orderedVal = this.puzzleSolved.orderedVal;
     }
 
     generatePuzzle() {
         let levels = {
             "easy": 36,
-            "medium": 47,
-            "hard": 55
+            "medium": 46,
+            "hard": 52
         };
 
         let newBoard = _.cloneDeep(this.solved);
 
-        for (let i = 0; i < levels[this.level]; i++) {
-            let row = Math.floor(Math.random() * 9);
-            let col = Math.floor(Math.random() * 9);
-            if (newBoard[row][col].val === 0) {
-                i--;
+        for (let i = 0; i < levels[this.level]; i+=2) {
+            let r_x = Math.floor(Math.random() * 9);
+            let r_y = Math.floor(Math.random() * 9);
+            let p_x = Math.abs(r_x - 8);
+            let p_y = Math.abs(r_y - 8);
+            if (newBoard[r_x][r_y].val === 0) {
+                i-=2;
             } else {
-                newBoard[row][col].val = 0
+                newBoard[r_x][r_y].val = 0
+                newBoard[p_x][p_y].val = 0
             }
         }
         return newBoard;
