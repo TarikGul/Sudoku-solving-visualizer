@@ -75,14 +75,14 @@
 
     .solve-button-container {
         display: flex;
+        width:50%;
         /* align-items: center; */
         /* width: 10%; */
     }
 
     .solve-button {
-        display: flex;
         background-color: rgb(5, 228, 228);
-        width: 100px;
+        width: 100%;
         height: 40px; 
         border: none;
         outline: none;
@@ -106,21 +106,20 @@
 
     .solve-reset-container {
         display: flex;
-        justify-content: space-evenly;
+        width: 100%;
     }
 
     .reset-button-container {
-
+        width:50%;
     }
 
     .reset-button {
-        display: flex;
+        
         background-color: rgb(5, 228, 228);
-        width: 100px;
+        width: 100%;
         height: 40px; 
         border: none;
         outline: none;
-        border-radius: 3px;
         font-size: 20px;
         cursor: pointer;
     }

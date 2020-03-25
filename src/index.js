@@ -37,6 +37,7 @@ document.addEventListener('click', (e) => {
         initalizeBoard('hard');
     } 
 });
+
 // When the reset button is hit to reset the board on the most
 // recent difficulty
 const reset = document.getElementById('reset')
@@ -49,14 +50,6 @@ reset.addEventListener('click', (e) => {
         initalizeBoard(currentDifficulty);
     }
 }); 
-
-
-
-//assign the visualize to the algorithm that the user picks
-// need to add an event listener so that that this can change
-// to whatever the user 'Selects'
-// let vis = new Visualize('Backtrace', board)
-// vis.initializeAlgo();
 
 const solve = document.getElementById('solve-1')
 solve.addEventListener('click', () => {
