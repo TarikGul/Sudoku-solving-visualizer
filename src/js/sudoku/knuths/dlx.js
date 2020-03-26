@@ -1,5 +1,4 @@
-//create a doubly linked list that is circulur
-
+// This comes directly from taylorjg on Github, who built this library to facilitate dlx
 /**
  * @typedef {number[]} PartialSolution The indices of the matrix rows that comprise a partial solution.
  */
