@@ -11,13 +11,6 @@ class Board {
         this.solver1 = new Backtrace(this.grid);
         this.solved = this.solver1.solver()
         this.puzzle = this.generatePuzzle();
-        //----------------------------------//
-
-        //----------------------------------//
-        // this.puzzleSolved = new Backtrace(_.cloneDeep(this.puzzle));
-        // this.puzzleSolved.solver();
-        // this.orderedPos = this.puzzleSolved.orderedPos;
-        // this.orderedVal = this.puzzleSolved.orderedVal;
     }
 
     generatePuzzle() {

@@ -2,7 +2,6 @@ import Board from './js/sudoku/board';
 import CreateBoard from './js/features/create_board';
 import sudokuUtil from './util/sudoku_util';
 import Visualize from './js/sudoku/visualize';
-let $ = require("jquery");
 
 document.addEventListener("DOMContentLoaded", function () {
     //Set the grid up on the page
@@ -17,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentDifficulty;
     let speed;
 
-    console.log(speed)
     const initalizeBoard = (diff) => {
         speed = Math.abs(document.getElementById('slider-2').value - 101)
         board = new Board(diff)
