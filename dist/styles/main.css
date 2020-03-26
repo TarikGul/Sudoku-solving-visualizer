@@ -172,7 +172,7 @@
 
     .grid-row {
         width: 100%;
-        height: 11.11%;
+        height: 100%;
         display: flex;
         flex-direction: row;
     }
@@ -210,7 +210,7 @@
     .difficulty-container {
         display: flex;
         align-items: center;
-        width: 100%;
+        width: 33%;
     }
 
     .solve-button-container {
