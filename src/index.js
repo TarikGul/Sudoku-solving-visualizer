@@ -1,10 +1,14 @@
-import Board from './js/sudoku/board'
-import CreateBoard from './js/features/create_board'
-import sudokuUtil from './util/sudoku_util'
-import Visualize from './js/sudoku/visualize'
+import Board from './js/sudoku/board';
+import CreateBoard from './js/features/create_board';
+import sudokuUtil from './util/sudoku_util';
+import Visualize from './js/sudoku/visualize';
+let $ = require("jquery");
+
+
 //Set the grid up on the page
 const boardGrid = new CreateBoard(9, 9);
 boardGrid.makeRows();
+
 
 //Create the default sudoku on the grid
 // let board = new Board('easy');

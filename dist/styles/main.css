@@ -1,6 +1,7 @@
 @media only screen and (max-width: 600px) { 
     .body {
-        height: 100vh
+        height: 100vh;
+        background-image: linear-gradient(to top, #D8E0BB, #B6CEC7 50% ,#86A3C3 75%);
     }
 
     .main-container {
@@ -76,8 +77,6 @@
     .solve-button-container {
         display: flex;
         width:50%;
-        /* align-items: center; */
-        /* width: 10%; */
     }
 
     .solve-button {
@@ -122,5 +121,10 @@
         outline: none;
         font-size: 20px;
         cursor: pointer;
+    }
+
+    .algo-button {
+        height: 40px;
+        margin: 0;
     }
 }

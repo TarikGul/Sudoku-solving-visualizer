@@ -5,30 +5,30 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/navbar.css">
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="styles/jquery.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script >
+        if (screen && screen.width < 480) {
+            document.write('<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"><\/script>')
+        }
+    </script>
+    <script >
+        if (screen && screen.width < 480) {
+            document.write('<script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js""><\/script>')
+        }
+    </script>
     <title>Document</title>
 </head>
 <body>
     <div class="body">
-        <!-- This is the navbar portion of the html -->
-        <div class="navbar-container">
-            <div class="navbar-left-container">
-                <div class="sudoku-logo">
-                    <!-- <img class="sudoku-png" src="images/sudoku-vis.png" alt=""> -->
-                </div>
-                
-            </div>
-            <div class="navbar-right-container">
-            
-            </div>
-        </div>
-
-
         <!-- This is the main container portion of the html -->
         <div class="main-container">
                     <div> Pick an algorithm </div>
-                    <button>BackTracing</button>
-                    <button>Knuths Algorithm X</button>
-                    <button>Stoachastic</button>
+                    <div class="algo-buttons">
+                        <button class="algo-button">BackTracing</button>
+                        <button class="algo-button">Knuths Algorithm X</button>
+                        <button class="algo-button">Stoachastic</button>
+                    </div>
                     <div class="algo-diff-container">
                         <div class="difficulty-container">
                             <button class="diff-button" id="easy">Easy</button>
@@ -48,6 +48,10 @@
                     <div class="reset-button-container">
                         <button class="reset-button"  id="reset">Reset</button>
                     </div>
+                </div>
+                <div class="ui-field-contain">
+                    <label for="slider-2">Speed:</label>
+                    <input type="range" name="slider-2" id="slider-2" value="25" min="0" max="100">
                 </div>
         </div> 
     </div>
