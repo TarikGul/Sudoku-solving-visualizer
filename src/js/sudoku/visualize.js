@@ -5,12 +5,13 @@ import _ from 'lodash'
 // Once a person selects and clicks solve it will visualize the algorithm for you
 
 class Visualize {
-    constructor(algorithm, board) {
+    constructor(algorithm, board, speed = 25) {
         this.algorithm = algorithm
         this.board = board
         this.orderedTraversal;
         this.orderedPositions;
         this.reset = false;
+        this.speed = speed
     }
 
     // This is where we choose which algorithm is going to be solved an initialized
@@ -47,7 +48,7 @@ class Visualize {
                 this.board.puzzle[cur_x][cur_y].val = nextVal;
                 loopStep();
                 i++
-            }, 5)
+            }, this.speed)
         }
         loopStep();
     }

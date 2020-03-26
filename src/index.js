@@ -15,10 +15,13 @@ boardGrid.makeRows();
 let board;
 let vis;
 let currentDifficulty;
+let speed;
 
+console.log(speed)
 const initalizeBoard = (diff) => {
+    speed = Math.abs(document.getElementById('slider-2').value - 101)
     board = new Board(diff)
-    vis = new Visualize('Backtrace', board)
+    vis = new Visualize('Backtrace', board, speed)
     sudokuUtil.clearBoard(9)
     sudokuUtil.createPuzzle(board.puzzle)
     vis.initializeAlgo();
