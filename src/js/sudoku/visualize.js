@@ -37,21 +37,20 @@ class Visualize {
             }
             const nextPos = this.orderedPositions[i].parsePos();
             const nextVal = this.orderedTraversal[i];
-
             let [cur_x, cur_y] = this.orderedPositions[i];
             setTimeout(() => {
                 const tile = document.getElementById(nextPos);
-                const counter = document.getElementsByClassName('counter')[0]
-                counter.innerText = `${this.count}`
+                const counter = document.getElementById('counter')
+                counter.innerText = `Iterations: ${this.count}`
                 if (nextVal === 0) {
                     tile.innerText = '';
                 } else {
                     tile.innerText = `${nextVal}`;
                 }
                 this.board.puzzle[cur_x][cur_y].val = nextVal;
+                this.count += 1
                 loopStep();
                 i++
-                this.count++
             }, this.speed)
         }
         loopStep();

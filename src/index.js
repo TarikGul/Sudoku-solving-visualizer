@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // When the reset button is hit to reset the board on the most
     // recent difficulty
     const reset = document.getElementById('reset')
+    const counter = document.getElementById('counter')
     reset.addEventListener('click', (e) => {
         if (currentDifficulty === undefined) {
             vis.abort();
@@ -57,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
             vis.abort();
             initalizeBoard(currentDifficulty);
         }
+        counter.innerText = 'Iterations: 0'
     }); 
 
     const solve = document.getElementById('solve-1')
