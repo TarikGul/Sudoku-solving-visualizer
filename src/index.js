@@ -1,7 +1,10 @@
+import regeneratorRuntime from "regenerator-runtime";
+import { Dlx } from './js/sudoku/knuths/dlx'
 import Board from './js/sudoku/board';
 import CreateBoard from './js/features/create_board';
 import sudokuUtil from './util/sudoku_util';
 import Visualize from './js/sudoku/visualize';
+import { solve, rowIndicesToSolution } from './js/sudoku/knuths/knuths';
 
 document.addEventListener("DOMContentLoaded", function () {
     //Set the grid up on the page
@@ -60,4 +63,36 @@ document.addEventListener("DOMContentLoaded", function () {
     solve.addEventListener('click', () => {
         vis.visualizeAlgo();
     });
+
+
+    const matrix = [
+        [1, 0, 0, 0],
+        [0, 1, 1, 0],
+        [1, 0, 0, 1],
+        [0, 0, 1, 1],
+        [0, 1, 0, 0],
+        [0, 0, 1, 0]
+    ]
+
+    const onStep = e =>
+        console.log(`step[${e.stepIndex}]: ${e.partialSolution}`)
+
+    const onSolution = e =>
+        console.log(`solution[${e.solutionIndex}]: ${e.solution}`)
+
+    const dlx = new Dlx()
+    dlx.on('step', onStep)
+    dlx.on('solution', onSolution)
+    dlx.solve(matrix)
+
+    const onSearchStep = (internalRows, rowIndices) => {
+        const partialSolution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
+        queue.push(drawPartialSolution(partialSolution));
+    };
+    const onSolutionFound = (internalRows, rowIndices) => {
+        const solution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
+        queue.push(drawSolution(solution));
+    };
+    const solutionGenerator = solve(PUZZLE, onSearchStep, onSolutionFound);
+    solutionGenerator.next();
 });

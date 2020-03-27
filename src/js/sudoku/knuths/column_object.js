@@ -9,7 +9,7 @@ class ColumnObject extends DataObject {
         this.numberOfRows = 0
     };
 
-    appenColumnHeader(columnObject) {
+    appendColumnHeader(columnObject) {
         this.previousColumnObject.nextColumnObject = columnObject;
         columnObject.nextColumnObject = this;
         columnObject.previousColumnObject = this.previousColumnObject;

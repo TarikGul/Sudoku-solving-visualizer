@@ -1,4 +1,8 @@
 // This comes directly from taylorjg on Github, who built this library to facilitate dlx
+
+import EventEmitter from 'events'
+import DataObject from './data_object';
+import ColumnObject from './column_object';
 /**
  * @typedef {number[]} PartialSolution The indices of the matrix rows that comprise a partial solution.
  */
