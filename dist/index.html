@@ -3,8 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
-    <link rel="stylesheet" type="text/css" href="styles/navbar.css">
-    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="styles/main.scss" />
     <script src="./bundle.js"></script>
     <title>Document</title>
 </head>
@@ -13,10 +12,9 @@
         <!-- This is the main container portion of the html -->
         <div class="main-container">
                     <div class="pick-algo"> Pick an algorithm </div>
-                    <div class="algo-buttons">
-                        <button class="algo-button">Backtracing(Recursive)</button>
-                        <button class="algo-button">Knuths Algorithm X</button>
-                        <button class="algo-button">Stoachastic</button>
+                    <div class="algo-buttons-container">
+                        <button class="algo-button">Backtracing</button>
+                        <button class="algo-button">Algorithm X</button>
                     </div>
                     <div class="algo-diff-container">
                         <div class="difficulty-container">
@@ -42,9 +40,10 @@
                     <label for="slider-2">Speed:</label>
                     <input type="range" name="slider-2" id="slider-2" value="75" min="0" max="100">
                 </div>
+                <div class="counter">
+                   0 
+                </div>
         </div> 
     </div>
-    <!-- <script src="../src//js//features//dropdown.js"></script>
-    <script src="./bundle.js"></script> -->
 </body>
 </html>

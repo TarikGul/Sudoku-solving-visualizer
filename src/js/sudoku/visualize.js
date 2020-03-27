@@ -12,6 +12,7 @@ class Visualize {
         this.orderedPositions;
         this.reset = false;
         this.speed = speed
+        this.count = 0;
     }
 
     // This is where we choose which algorithm is going to be solved an initialized
@@ -40,6 +41,8 @@ class Visualize {
             let [cur_x, cur_y] = this.orderedPositions[i];
             setTimeout(() => {
                 const tile = document.getElementById(nextPos);
+                const counter = document.getElementsByClassName('counter')[0]
+                counter.innerText = `${this.count}`
                 if (nextVal === 0) {
                     tile.innerText = '';
                 } else {
@@ -48,6 +51,7 @@ class Visualize {
                 this.board.puzzle[cur_x][cur_y].val = nextVal;
                 loopStep();
                 i++
+                this.count++
             }, this.speed)
         }
         loopStep();
