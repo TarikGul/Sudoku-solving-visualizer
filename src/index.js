@@ -85,6 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
     dlx.on('solution', onSolution)
     dlx.solve(matrix)
 
+    // what i need to do next is make a function that returns the puzzle in str 
+    // form. and pass it into the function below as a constant
+    let queue = [];
     const onSearchStep = (internalRows, rowIndices) => {
         const partialSolution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
         queue.push(drawPartialSolution(partialSolution));
