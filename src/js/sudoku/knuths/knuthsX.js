@@ -18,7 +18,7 @@ class AlgoX {
         rowIndicies => onSolutionFound(internalRows, rowIndicies)
     };
 
-    solve(puzzle, internalRows, rowIndicies) {
+    solve(puzzle, internalRows, onSolutionFound) {
         const internalRows = this.buildInternalRows(puzzle);
         const matrix = this.buildDlxMatrix(internalRows)
         return solutionGenerator(matrix, 

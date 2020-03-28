@@ -1,5 +1,6 @@
 import Backtrace from './backtrace'
 import _ from 'lodash'
+import sudokuUtil from '../../util/sudoku_util'
 
 // Import all the algorithms in here, make a select event listener 
 // Once a person selects and clicks solve it will visualize the algorithm for you
@@ -13,7 +14,7 @@ class Visualize {
         this.reset = false;
         this.speed = speed
         this.count = 0;
-        this.time = 0
+        this.time = 0;
     }
 
     // This is where we choose which algorithm is going to be solved an initialized
@@ -38,11 +39,15 @@ class Visualize {
             }
             const nextPos = this.orderedPositions[i].parsePos();
             const nextVal = this.orderedTraversal[i];
-            let [cur_x, cur_y] = this.orderedPositions[i];
+
+            const [cur_x, cur_y] = this.orderedPositions[i];
+
             setTimeout(() => {
                 const tile = document.getElementById(nextPos);
-                const counter = document.getElementById('counter')
+                const timer = document.getElementById('time')
+                const counter = document.getElementById('counter');
                 counter.innerText = `Iterations: ${this.count}`
+                timer.innerText = `Time: ${sudokuUtil.timeConversion(this.time)}`
                 if (nextVal === 0) {
                     tile.innerText = '';
                 } else {
@@ -50,6 +55,7 @@ class Visualize {
                 }
                 this.board.puzzle[cur_x][cur_y].val = nextVal;
                 this.count += 1
+                this.time += this.speed
                 loopStep();
                 i++
             }, this.speed)

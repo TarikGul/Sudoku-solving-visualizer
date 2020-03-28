@@ -101,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // what i need to do next is make a function that returns the puzzle in str 
     // form. and pass it into the function below as a constant
     let queue = [];
-    debugger
     const onSearchStep = (internalRows, rowIndices) => {
         const partialSolution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
         queue.push(drawPartialSolution(partialSolution));
@@ -110,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const solution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
         queue.push(drawSolution(solution));
     };
-    debugger
     const solutionGenerator = solve1(PUZZLE, onSearchStep, onSolutionFound);
     solutionGenerator.next();
     console.log(queue)
