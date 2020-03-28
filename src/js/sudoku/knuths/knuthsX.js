@@ -2,11 +2,12 @@ import { solutionGenerator } from './dlx'
 
 class AlgoX {
     constructor(puzzle) {
-        this.puzzle = puzzle
+        this.puzzle = puzzle;
         this.INDICES = Array.from(Array(9).keys());
         this.ROWS = INDICES;
         this.COLS = INDICES;
         this.DIGITS = INDICES.map(n => n + 1);
+        this.queue = [];
     }
 
     internalOnSearchStep(onSearchStep, internalRows) {
@@ -94,3 +95,5 @@ class AlgoX {
         return result;
     }
 }
+
+export default AlgoX;

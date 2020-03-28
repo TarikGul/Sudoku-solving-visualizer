@@ -4,7 +4,7 @@ import Board from './js/sudoku/board';
 import CreateBoard from './js/features/create_board';
 import sudokuUtil from './util/sudoku_util';
 import Visualize from './js/sudoku/visualize';
-import { solve, rowIndicesToSolution } from './js/sudoku/knuths/knuths';
+import { solve1, rowIndicesToSolution } from './js/sudoku/knuths/knuths';
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // what i need to do next is make a function that returns the puzzle in str 
     // form. and pass it into the function below as a constant
     let queue = [];
+    debugger
     const onSearchStep = (internalRows, rowIndices) => {
         const partialSolution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
         queue.push(drawPartialSolution(partialSolution));
@@ -110,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
         queue.push(drawSolution(solution));
     };
     debugger
-    const solutionGenerator = solve(PUZZLE, onSearchStep, onSolutionFound);
+    const solutionGenerator = solve1(PUZZLE, onSearchStep, onSolutionFound);
     solutionGenerator.next();
     console.log(queue)
 });

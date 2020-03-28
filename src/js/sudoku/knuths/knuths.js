@@ -8,7 +8,7 @@ const internalOnSolutionFound = (onSolutionFound, internalRows) =>
 
 
 // C.puzzle is going to be the puzzle i make and pass into the buildinternalrows function
-export const solve = (puzzle, onSearchStep, onSolutionFound) => {
+export const solve1 = (puzzle, onSearchStep, onSolutionFound) => {
     const internalRows = buildInternalRows(puzzle);
     const matrix = buildDlxMatrix(internalRows);
     return solutionGenerator(
