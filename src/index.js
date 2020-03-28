@@ -6,6 +6,7 @@ import sudokuUtil from './util/sudoku_util';
 import Visualize from './js/sudoku/visualize';
 import { solve, rowIndicesToSolution } from './js/sudoku/knuths/knuths';
 
+
 document.addEventListener("DOMContentLoaded", function () {
     //Set the grid up on the page
     const boardGrid = new CreateBoard(9, 9);
@@ -28,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
         vis.initializeAlgo();
     }
     initalizeBoard('easy');
-
     // When a difficulty is hit it will reset the board
     document.addEventListener('click', (e) => {
         if (e.target.id === 'easy') {
@@ -87,6 +87,17 @@ document.addEventListener("DOMContentLoaded", function () {
     dlx.on('solution', onSolution)
     dlx.solve(matrix)
 
+    const PUZZLE = [
+        "8        ",
+        "  36     ",
+        " 7  9 2  ",
+        " 5   7   ",
+        "    457  ",
+        "   1   3 ",
+        "  1    68",
+        "  85   1 ",
+        " 9    4  "
+    ];
     // what i need to do next is make a function that returns the puzzle in str 
     // form. and pass it into the function below as a constant
     let queue = [];
@@ -98,6 +109,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const solution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
         queue.push(drawSolution(solution));
     };
+    debugger
     const solutionGenerator = solve(PUZZLE, onSearchStep, onSolutionFound);
     solutionGenerator.next();
+    console.log(queue)
 });
