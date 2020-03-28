@@ -2,6 +2,7 @@ import { solutionGenerator } from './dlx'
 
 class AlgoX {
     constructor(puzzle) {
+        this.puzzle = puzzle
         this.INDICES = Array.from(Array(9).keys());
         this.ROWS = INDICES;
         this.COLS = INDICES;
@@ -70,4 +71,26 @@ class AlgoX {
             ? [{ coords, value: initialValue, initialValue: true }]
             : DIGIITS.map(digit => ({coords, value: digit, isInitialValue: false}))
     };
+
+    buildDlxMatrix(internalRow) {
+        const { row, col } = internalRow.coords;
+        const value = internalRow.value;
+        const box = this.rowColToBox(row, col);
+        const posVals = this.encode(row, col);
+        const rowVals = this.encode(row, value - 1);
+        const colVals = this.encode(col, value - 1);
+        const boxVals = this.encode(box, value - 1);
+        const result = posVals.concat(rowVals, colVals, boxVals);
+        return result;
+    }
+
+    rowColToBox(row, col) {
+        Math.floor(row - (row % 3) + (col / 3));
+    };
+
+    encode(major, minor) {
+        const result = Array(81).fill(0);
+        result[major * 9 + minor] = 1;
+        return result;
+    }
 }
