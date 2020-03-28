@@ -1,0 +1,310 @@
+@media only screen and (max-width: 600px) { 
+    .body {
+        height: 100vh;
+        background-color: #D7E0EB;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        background-color: white(96, 188, 231);
+        width: 100%;
+        height: calc(100vh - 60px);
+    }
+
+    /* .main-container > div {
+        padding-top: 10px;
+    } */
+
+    .main-right-header-container {
+        margin: 50px;
+        margin-bottom: 20px;
+        border: 1px solid black;
+        height: 13%;
+    }
+
+    .sudoku-board {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: same-as-width;
+    }
+
+    .grid-row {
+        width: 100%;
+        height: 11.11%;
+        display: flex;
+        flex-direction: row;
+    }
+    .grid-item {
+        border: 1px solid rgb(201, 201, 201);
+        height: 2.5rem;
+        width: 11%;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .gray {
+        background-color: #D9DAD9;
+    }
+
+    .white {
+        background-color: #F8F8F6;
+    }
+
+    .main-right-header-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .algo-diff-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* .algo-diff-container > div {
+        padding: 10px;
+    } */
+
+    .difficulty-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .diff-button:nth-child(2) {
+        border-right: 1px solid rgb(187, 187, 187);
+        border-left: 1px solid rgb(187, 187, 187);
+    }
+
+    .diff-button:hover {
+        opacity: .7;
+    }
+
+    .diff-button {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+
+    .solve-button-container {
+        display: flex;
+        width:50%;
+    }
+
+    .solve-button {
+        background-color: #A0C3E2;
+        width: 100%;
+        height: 40px; 
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+        letter-spacing: 2px;
+    }
+
+    .solve-button:hover {
+        background-color: #027DC5;
+    }
+
+    .difficulty-container > button {
+        height: 45px;
+        width: 33.3%;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background-color: #A0C3E2;
+    }
+
+    .solve-reset-container {
+        display: flex;
+        width: 100%;
+    }
+
+    .reset-button-container {
+        width:50%;
+    }
+
+    .reset-button {
+        background-color: #A0C3E2;
+        width: 100%;
+        height: 40px; 
+        border: none;
+        outline: none;
+        font-size: 20px;
+        cursor: pointer;
+        letter-spacing: 2px;
+    }
+
+    .reset-button:hover {
+        background-color: #027DC5;
+    }
+
+    .algo-button {
+        height: 40px;
+        margin: 0;
+    }
+
+    .algo-buttons-container {
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .pick-algo {
+        padding: 20px;
+        padding-bottom: 5px;
+        text-align: center;
+        font-size: large;
+        font-weight: 600;
+        color: black;
+        text-shadow: none;
+    }
+
+    #slider-2 {
+        height: 20px;
+    }
+
+    
+}
+
+@media only screen and (min-width: 600px) { 
+    .body {
+        height: 100vh;
+        background-image: linear-gradient(to top, #D8E0BB, #B6CEC7 50% ,#86A3C3 75%);
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+        background-color: white(96, 188, 231);
+        width: 100%;
+        height: calc(100vh - 60px);
+    }
+
+    /* .main-container > div {
+        padding-top: 10px;
+    } */
+
+    .main-right-header-container {
+        margin: 50px;
+        margin-bottom: 20px;
+        border: 1px solid black;
+        height: 13%;
+    }
+
+    .sudoku-board {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: same-as-width;
+    }
+
+    .grid-row {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    .grid-item {
+        border: 1px solid rgb(201, 201, 201);
+        height: 100%;
+        width: 50px;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .gray {
+        background-color: rgb(235, 235, 235);
+    }
+
+    .white {
+        background-color: white;
+    }
+
+    .main-right-header-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .algo-diff-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* .algo-diff-container > div {
+        padding: 10px;
+    } */
+
+    .difficulty-container {
+        display: flex;
+        align-items: center;
+        width: 33%;
+    }
+
+    .solve-button-container {
+        display: flex;
+        width:50%;
+    }
+
+    .solve-button {
+        background-color: rgb(5, 228, 228);
+        width: 100%;
+        height: 40px; 
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .solve-button:hover {
+        background-color: teal;
+    }
+
+    .difficulty-container > button {
+        height: 45px;
+        width: 33.3%;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        background-color: rgb(5, 228, 228);
+    }
+
+    .solve-reset-container {
+        display: flex;
+        width: 100%;
+    }
+
+    .reset-button-container {
+        width:50%;
+    }
+
+    .reset-button {
+        
+        background-color: rgb(5, 228, 228);
+        width: 100%;
+        height: 40px; 
+        border: none;
+        outline: none;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .algo-button {
+        height: 40px;
+        margin: 0;
+    }
+
+    .pick-algo {
+        text-align: center;
+        font-size: large;
+        font-weight: 600;
+        color: black;
+        text-shadow: none;
+    }
+}

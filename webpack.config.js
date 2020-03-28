@@ -23,7 +23,7 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     resolve: {
-        extensions: [".js", ".jsx", "*"]
+        extensions: [".js", "*"]
     }
 };
 //https://bost.ocks.org/mike/bubble-map/
