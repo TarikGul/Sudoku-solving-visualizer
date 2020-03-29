@@ -195,13 +195,12 @@
 
     .sudoku-main-container {
         display: flex;
-        align-items: center;
+        justify-content: center;
     }
 
     .sudoku-board {
         display: flex;
         flex-direction: column;
-        align-items: center;
         width: 512px;
         height: same-as-width;
     }
@@ -246,7 +245,7 @@
     .difficulty-container {
         display: flex;
         align-items: center;
-        width: 100%;
+        width: 512px;
     }
 
     .diff-button:nth-child(2) {
@@ -295,6 +294,12 @@
 
     .solve-reset-container {
         display: flex;
+        width: 512px;
+    }
+
+    .outer-solve-reset-container {
+        display: flex;
+        justify-content: center;
         width: 100%;
     }
 
