@@ -1,10 +1,8 @@
-import regeneratorRuntime from "regenerator-runtime";
-import { Dlx } from './js/sudoku/knuths/dlx'
 import Board from './js/sudoku/board';
 import CreateBoard from './js/features/create_board';
 import sudokuUtil from './util/sudoku_util';
 import Visualize from './js/sudoku/visualize';
-import { solve1, rowIndicesToSolution } from './js/sudoku/knuths/knuths';
+import AlgoX from './js/sudoku/knuths/algoX'
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -68,27 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
         vis.visualizeAlgo();
     });
 
-
-    const matrix = [
-        [1, 0, 0, 0],
-        [0, 1, 1, 0],
-        [1, 0, 0, 1],
-        [0, 0, 1, 1],
-        [0, 1, 0, 0],
-        [0, 0, 1, 0]
-    ]
-
-    const onStep = e =>
-        console.log(`step[${e.stepIndex}]: ${e.partialSolution}`)
-
-    const onSolution = e =>
-        console.log(`solution[${e.solutionIndex}]: ${e.solution}`)
-
-    const dlx = new Dlx()
-    dlx.on('step', onStep)
-    dlx.on('solution', onSolution)
-    dlx.solve(matrix)
-
     const PUZZLE = [
         "8        ",
         "  36     ",
@@ -100,18 +77,20 @@ document.addEventListener("DOMContentLoaded", function () {
         "  85   1 ",
         " 9    4  "
     ];
+    const algo = new AlgoX(PUZZLE)
+    console.log(algo)
     // what i need to do next is make a function that returns the puzzle in str 
     // form. and pass it into the function below as a constant
-    let queue = [];
-    const onSearchStep = (internalRows, rowIndices) => {
-        const partialSolution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
-        queue.push(drawPartialSolution(partialSolution));
-    };
-    const onSolutionFound = (internalRows, rowIndices) => {
-        const solution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
-        queue.push(drawSolution(solution));
-    };
-    const solutionGenerator = solve1(PUZZLE, onSearchStep, onSolutionFound);
-    solutionGenerator.next();
-    console.log(queue)
+    // let queue = [];
+    // const onSearchStep = (internalRows, rowIndices) => {
+    //     const partialSolution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
+    //     queue.push(partialSolution);
+    // };
+    // const onSolutionFound = (internalRows, rowIndices) => {
+    //     const solution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
+    //     queue.push(solution);
+    // };
+    // const solutionGenerator = solve1(PUZZLE, onSearchStep, onSolutionFound);
+    // solutionGenerator.next();
+    // console.log(queue)
 });

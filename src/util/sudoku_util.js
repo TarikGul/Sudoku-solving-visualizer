@@ -2,29 +2,29 @@ const sudokuUtil = {
     createPuzzle: (arr) => {
         for(let i = 0; i < arr.length; i++) {
             for(let j = 0; j < arr[i].length; j++) {
-                const tile = arr[i][j]
-                const div = document.getElementById(`${i}-${j}`)
-                const text = document.createTextNode(tile.val)
+                const tile = arr[i][j];
+                const div = document.getElementById(`${i}-${j}`);
+                const text = document.createTextNode(tile.val);
                 if (tile.val === 0) {
-                    div.classList.remove('red')
+                    div.classList.remove('red');
                 }
                 if (tile.val !== 0) {
-                    div.appendChild(text)
-                    div.classList.add('red')
+                    div.appendChild(text);
+                    div.classList.add('red');
                 }
                 if (tile.gridAttribute === 'gray') {
-                    div.classList.add("gray")
+                    div.classList.add("gray");
                 } else {
-                    div.classList.add("white")
-                }
-            }
-        }
+                    div.classList.add("white");
+                };
+            };
+        };
     },
     clearBoard: (num) => {
         for (let i = 0; i < num; i++) {
             for (let j = 0; j < num; j++) {
-                const div = document.getElementById(`${i}-${j}`)
-                div.innerText = ''
+                const div = document.getElementById(`${i}-${j}`);
+                div.innerText = '';
             }
         }
     },
