@@ -4,12 +4,15 @@ class AlgoX {
     constructor(puzzle) {
         this.puzzle = puzzle
         this.queue = [];
-        
+        this.orderedPos = [];
+        this.orderedVal = [];
+
         this.onSearchStep = this.onSearchStep.bind(this)
         this.onSolutionFound = this.onSolutionFound.bind(this)
 
         this.solutionGenerator = solve(this.puzzle, this.onSearchStep, this.onSolutionFound);
         this.solutionGenerator.next();
+        
     }
 
     onSearchStep(internalRows, rowIndices) {

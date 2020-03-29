@@ -1,4 +1,5 @@
 import Backtrace from './backtrace'
+import AlgoX from './knuths/algoX'
 import _ from 'lodash'
 import sudokuUtil from '../../util/sudoku_util'
 
@@ -24,6 +25,9 @@ class Visualize {
             solved.solver();
             this.orderedPositions =  solved.orderedPos
             this.orderedTraversal = solved.orderedVal
+            console.log(sudokuUtil.algoPuzzleParser(this.board.puzzle));
+        } else if (this.algorithm === "AlgoX") {
+
         }
     }
 

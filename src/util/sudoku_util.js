@@ -45,9 +45,25 @@ const sudokuUtil = {
         } else if (hours < 24) {
             return hours + " hrs";
         } else {
-            return days + " days"
+            return days + " days";
         }
     },
+    algoPuzzleParser: (puzzle) => {
+        debugger
+        let newPuzzle = [];
+        for(let i = 0; i < puzzle.length; i++) {
+            let str = "";
+            for(let j = 0; j < puzzle.length; j ++) {
+                if( puzzle[i][j].val !== 0) {
+                    str += puzzle[i][j].val;
+                } else {
+                    str += ' ';
+                }
+            }
+            newPuzzle.push(str);
+        }
+        return newPuzzle;
+    }
 }
 
 export default sudokuUtil;
