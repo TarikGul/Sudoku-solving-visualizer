@@ -28,7 +28,7 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        height: same-as-width;
+        // height: same-as-width;
     }
 
     .grid-row {
@@ -39,7 +39,8 @@
     }
     .grid-item {
         border: 1px solid rgb(201, 201, 201);
-        height: 2.5rem;
+        // height: 2.5rem;
+        height: 40px;
         width: 11%;
         text-align: center;
         line-height: 50px;
