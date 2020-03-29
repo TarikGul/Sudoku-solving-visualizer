@@ -27,6 +27,9 @@ class Visualize {
             this.orderedTraversal = solved.orderedVal;
         } else if (this.algorithm === "AlgoX") {
             let puzzle = sudokuUtil.algoPuzzleParser(this.board.puzzle);
+            let solved = new AlgoX(puzzle);
+            this.orderedPositions = solved.orderedPos;
+            this.orderedTraversal = solved.orderedVal;
         }
     }
 

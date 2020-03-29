@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const initalizeBoard = (diff) => {
         speed = Math.abs(document.getElementById('slider-2').value - 101)
         board = new Board(diff)
-        vis = new Visualize('Backtrace', board, speed)
+        vis = new Visualize('AlgoX', board, speed)
         sudokuUtil.clearBoard(9)
         sudokuUtil.createPuzzle(board.puzzle)
         vis.initializeAlgo();
@@ -79,44 +79,4 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
     const algo = new AlgoX(PUZZLE)
     console.log(algo)
-    // const parse = (algo) => {
-    //     const { puzzle, queue } = algo;
-    //     let occupied = [];
-    //     let orderedPos = [];
-    //     let orderedVal = [];
-    //     for(let i = 0; i < puzzle.length; i++) {
-    //         for(let j = 0; j < puzzle[i].length; j++) {
-    //             if (puzzle[i][j] !== ' ') {
-    //                 occupied.push(`[${i},${j}]`)
-    //             }
-    //         }
-    //     }
-    //     for (let i = 0; i < queue.length; i++) {
-    //         for (let j = 0; j < queue[i].length; j++) {
-    //             for (let p = 0; p < queue[i][j].length; p++) {
-    //                 let val = queue[i][j][p];
-    //                 if (!occupied.includes(`[${j},${p}]`) && val !== ' ') {
-    //                     orderedPos.push([j,p])
-    //                     orderedVal.push(val)
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     console.log(orderedVal, orderedPos)
-    // }
-    // parse(algo)
-    // what i need to do next is make a function that returns the puzzle in str 
-    // form. and pass it into the function below as a constant
-    // let queue = [];
-    // const onSearchStep = (internalRows, rowIndices) => {
-    //     const partialSolution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
-    //     queue.push(partialSolution);
-    // };
-    // const onSolutionFound = (internalRows, rowIndices) => {
-    //     const solution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
-    //     queue.push(solution);
-    // };
-    // const solutionGenerator = solve1(PUZZLE, onSearchStep, onSolutionFound);
-    // solutionGenerator.next();
-    // console.log(queue)
 });
