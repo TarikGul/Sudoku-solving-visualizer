@@ -23,11 +23,10 @@ class Visualize {
         if (this.algorithm === "Backtrace") {
             let solved = new Backtrace(_.cloneDeep(this.board.puzzle));
             solved.solver();
-            this.orderedPositions =  solved.orderedPos
-            this.orderedTraversal = solved.orderedVal
-            console.log(sudokuUtil.algoPuzzleParser(this.board.puzzle));
+            this.orderedPositions =  solved.orderedPos;
+            this.orderedTraversal = solved.orderedVal;
         } else if (this.algorithm === "AlgoX") {
-
+            let puzzle = sudokuUtil.algoPuzzleParser(this.board.puzzle);
         }
     }
 

@@ -49,7 +49,6 @@ const sudokuUtil = {
         }
     },
     algoPuzzleParser: (puzzle) => {
-        debugger
         let newPuzzle = [];
         for(let i = 0; i < puzzle.length; i++) {
             let str = "";
