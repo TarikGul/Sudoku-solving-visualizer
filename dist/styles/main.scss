@@ -1,4 +1,4 @@
-@media only screen and (max-width: 600px) { 
+@media only screen and (max-width: 480px) { 
     .body {
         height: 100vh;
         background-color: #D7E0EB;
@@ -170,7 +170,7 @@
     
 }
 
-@media only screen and (min-width: 600px) { 
+@media only screen and (min-width: 480px) { 
     .body {
         height: 100vh;
         background-color: #D7E0EB;
@@ -193,6 +193,11 @@
         margin-bottom: 20px;
         border: 1px solid black;
         height: 13%;
+    }
+
+    .sudoku-main-container {
+        display: flex;
+        align-items: center;
     }
 
     .sudoku-board {
