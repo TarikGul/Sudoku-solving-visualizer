@@ -47,7 +47,7 @@ class Visualize {
             const nextVal = this.orderedTraversal[i];
 
             const [cur_x, cur_y] = this.orderedPositions[i];
-
+            
             setTimeout(() => {
                 const tile = document.getElementById(nextPos);
                 const timer = document.getElementById('time')
