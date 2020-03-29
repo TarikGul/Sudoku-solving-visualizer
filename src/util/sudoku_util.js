@@ -5,8 +5,12 @@ const sudokuUtil = {
                 const tile = arr[i][j]
                 const div = document.getElementById(`${i}-${j}`)
                 const text = document.createTextNode(tile.val)
+                if (tile.val === 0) {
+                    div.classList.remove('red')
+                }
                 if (tile.val !== 0) {
                     div.appendChild(text)
+                    div.classList.add('red')
                 }
                 if (tile.gridAttribute === 'gray') {
                     div.classList.add("gray")
