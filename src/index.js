@@ -65,18 +65,4 @@ document.addEventListener("DOMContentLoaded", function () {
     solve.addEventListener('click', () => {
         vis.visualizeAlgo();
     });
-
-    const PUZZLE = [
-        "8        ",
-        "  36     ",
-        " 7  9 2  ",
-        " 5   7   ",
-        "    457  ",
-        "   1   3 ",
-        "  1    68",
-        "  85   1 ",
-        " 9    4  "
-    ];
-    const algo = new AlgoX(PUZZLE)
-    console.log(algo)
 });
