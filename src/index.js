@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // recent difficulty
     const reset = document.getElementById('reset');
     const counter = document.getElementById('counter');
-    const timer = document.getElementById('timer');
+    const timer = document.getElementById('time');
     reset.addEventListener('click', (e) => {
         if (currentDifficulty === undefined) {
             vis.abort();
