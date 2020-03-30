@@ -1,4 +1,5 @@
 import Backtrace from './backtrace'
+import AlgoX from './knuths/algoX'
 import _ from 'lodash'
 import sudokuUtil from '../../util/sudoku_util'
 
@@ -22,8 +23,13 @@ class Visualize {
         if (this.algorithm === "Backtrace") {
             let solved = new Backtrace(_.cloneDeep(this.board.puzzle));
             solved.solver();
-            this.orderedPositions =  solved.orderedPos
-            this.orderedTraversal = solved.orderedVal
+            this.orderedPositions =  solved.orderedPos;
+            this.orderedTraversal = solved.orderedVal;
+        } else if (this.algorithm === "AlgoX") {
+            let puzzle = sudokuUtil.algoPuzzleParser(this.board.puzzle);
+            let solved = new AlgoX(puzzle);
+            this.orderedPositions = solved.orderedPos;
+            this.orderedTraversal = solved.orderedVal;
         }
     }
 
@@ -31,21 +37,27 @@ class Visualize {
 
         let i = 0;
         const loopStep = () => {
+            
             if (i === this.orderedTraversal.length) {
                 return;
             } else if (this.reset === true) {
                 this.reset = false
                 return;
             }
+            let lastPos;
+            if (i !== 0) {
+                lastPos = this.orderedPositions[i - 1].parsePos();
+            }
             const nextPos = this.orderedPositions[i].parsePos();
             const nextVal = this.orderedTraversal[i];
 
             const [cur_x, cur_y] = this.orderedPositions[i];
-
+            
             setTimeout(() => {
                 const tile = document.getElementById(nextPos);
-                const timer = document.getElementById('time')
+                const timer = document.getElementById('time');
                 const counter = document.getElementById('counter');
+                
                 counter.innerText = `Iterations: ${this.count}`
                 timer.innerText = `Time: ${sudokuUtil.timeConversion(this.time)}`
                 if (nextVal === 0) {
@@ -53,6 +65,12 @@ class Visualize {
                 } else {
                     tile.innerText = `${nextVal}`;
                 }
+
+                tile.classList.add('o-red')
+                setTimeout(() => {
+                    tile.classList.remove('o-red');
+                }, 500)
+        
                 this.board.puzzle[cur_x][cur_y].val = nextVal;
                 this.count += 1
                 this.time += this.speed

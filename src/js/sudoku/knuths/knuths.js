@@ -1,4 +1,4 @@
-import { solutionGenerator } from './dlx'
+import { solutionGenerator } from 'dlxlib'
 
 const internalOnSearchStep = (onSearchStep, internalRows) =>
     rowIndices => onSearchStep(internalRows, rowIndices);
@@ -6,9 +6,7 @@ const internalOnSearchStep = (onSearchStep, internalRows) =>
 const internalOnSolutionFound = (onSolutionFound, internalRows) =>
     rowIndices => onSolutionFound(internalRows, rowIndices);
 
-
-// C.puzzle is going to be the puzzle i make and pass into the buildinternalrows function
-export const solve1 = (puzzle, onSearchStep, onSolutionFound) => {
+export const solve = (puzzle, onSearchStep, onSolutionFound) => {
     const internalRows = buildInternalRows(puzzle);
     const matrix = buildDlxMatrix(internalRows);
     return solutionGenerator(
@@ -16,7 +14,6 @@ export const solve1 = (puzzle, onSearchStep, onSolutionFound) => {
         internalOnSearchStep(onSearchStep, internalRows),
         internalOnSolutionFound(onSolutionFound, internalRows));
 };
-
 
 export const rowIndicesToSolution = (puzzle, internalRows, rowIndices) => {
     const values = puzzleStringToValues(puzzle);
@@ -28,7 +25,6 @@ export const rowIndicesToSolution = (puzzle, internalRows, rowIndices) => {
     return valuesToPuzzleString(values);
 };
 
-// again c.puzzle is going to be the puzzle i pass into it
 const puzzleStringToValues = puzzle => flatten(puzzle.map(s => s.split('')));
 
 const valuesToPuzzleString = values =>

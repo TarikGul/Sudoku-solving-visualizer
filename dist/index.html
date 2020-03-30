@@ -11,11 +11,18 @@
     <div class="body">
         <!-- This is the main container portion of the html -->
         <div class="main-container">
-                    <div class="pick-algo"> Pick an algorithm </div>
-                    <div class="algo-buttons-container">
-                        <button class="algo-button">Backtracing</button>
-                        <button class="algo-button">Algorithm X</button>
+                <div class="pick-algo-container">
+                    <h1 class="pick-algo"> Pick an algorithm </h1>
+                </div>
+                <div class="algo-buttons-container">
+                    <div>
+                        <button class="algo-button" id="backtrace">Backtracing</button>
                     </div>
+                    <div>
+                        <button class="algo-button" id="algox">Algorithm X</button>
+                    </div>
+                </div>
+                <div class="bottom-container">
                     <div class="algo-diff-container">
                         <div class="difficulty-container">
                             <button class="diff-button" id="easy">Easy</button>
@@ -23,28 +30,47 @@
                             <button class="diff-button" id="hard">Hard</button>
                         </div>
                     </div>
-                <div class="sudoku-main-container">
-                    <div class="sudoku-board">
-
+                    <div class="sudoku-main-container">
+                        <div class="sudoku-board">
+                        
+                        </div>
                     </div>
-                </div>
-                <div class="solve-reset-container">
-                    <div class="solve-button-container">
-                        <button class="solve-button" id="solve-1"> Solve </button>
+                    <div class="outer-solve-reset-container">
+                        <div class="solve-reset-container">
+                            <div class="solve-button-container">
+                                <button class="solve-button" id="solve-1"> Solve </button>
+                            </div>
+                            <div class="reset-button-container">
+                                <button class="reset-button"  id="reset">Reset</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="reset-button-container">
-                        <button class="reset-button"  id="reset">Reset</button>
+                    <div class="outer-data-container">
+                        <div class="data-container">
+                            <div class="data-container-top">
+                                <div class="chosen-algo" id="chosen-algo">
+                                    Algorithm: Backtracing
+                                </div>
+                                <div class="chosen-difficulty" id="diff">
+                                    Difficulty: Easy
+                                </div>
+                            </div>
+                            <div class="data-container-bottom">
+                                <div class="ui-field-contain">
+                                    <label for="slider-2" class="slider-label">Speed:</label>
+                                    <input type="range" name="slider-2" id="slider-2" value="90" min="0" max="90">
+                                </div>
+                                <div class="counter-container">
+                                    <div class="counter" id="counter">
+                                        Iterations: 0
+                                    </div>
+                                    <div class="time" id="time">
+                                        Time: 0ms
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="ui-field-contain">
-                    <label for="slider-2">Speed:</label>
-                    <input type="range" name="slider-2" id="slider-2" value="75" min="0" max="100">
-                </div>
-                <div class="counter" id="counter">
-                   Iterations: 0 
-                </div>
-                <div class="time" id="time">
-                    Time: 0ms
                 </div>
         </div> 
     </div>

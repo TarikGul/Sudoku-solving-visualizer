@@ -1,10 +1,7 @@
-import regeneratorRuntime from "regenerator-runtime";
-import { Dlx } from './js/sudoku/knuths/dlx'
 import Board from './js/sudoku/board';
 import CreateBoard from './js/features/create_board';
 import sudokuUtil from './util/sudoku_util';
 import Visualize from './js/sudoku/visualize';
-import { solve1, rowIndicesToSolution } from './js/sudoku/knuths/knuths';
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -17,34 +14,56 @@ document.addEventListener("DOMContentLoaded", function () {
     // let board = new Board('easy');
     let board;
     let vis;
-    let currentDifficulty;
+    let algo;
     let speed;
+    let currentDifficulty = 'easy';
 
-    const initalizeBoard = (diff) => {
-        speed = Math.abs(document.getElementById('slider-2').value - 101)
-        board = new Board(diff)
-        vis = new Visualize('Backtrace', board, speed)
-        sudokuUtil.clearBoard(9)
-        sudokuUtil.createPuzzle(board.puzzle)
+    const initalizeBoard = (diff, algo = 'Backtrace') => {
+        speed = Math.abs(document.getElementById('slider-2').value - 101);
+        board = new Board(diff);
+        vis = new Visualize(algo, board, speed);
+        sudokuUtil.clearBoard(9);
+        sudokuUtil.createPuzzle(board.puzzle);
         vis.initializeAlgo();
     }
-    initalizeBoard('easy');
+    initalizeBoard('easy', algo);
+
     // When a difficulty is hit it will reset the board
     document.addEventListener('click', (e) => {
+        const diff = document.getElementById('diff')
         if (e.target.id === 'easy') {
             currentDifficulty = 'easy';
+            diff.innerText = `Difficulty: Easy`
             vis.abort();
-            initalizeBoard('easy');
+            initalizeBoard('easy', algo);
         } else if (e.target.id === 'medium') {
             currentDifficulty = 'medium';
+            diff.innerText = `Difficulty: Medium`
             vis.abort();
-            initalizeBoard('medium');
+            initalizeBoard('medium', algo);
         } else if (e.target.id === 'hard') {
             currentDifficulty = 'hard';
+            diff.innerText = `Difficulty: Hard`
             vis.abort();
-            initalizeBoard('hard');
+            initalizeBoard('hard', algo);
         } 
     });
+
+    // When an algorithm is clicked on to change the current algo, and reset board
+    document.addEventListener('click', (e) => {
+        const chosenAlgo = document.getElementById('chosen-algo')
+        if (e.target.id === 'backtrace') {
+            algo = 'Backtrace';
+            chosenAlgo.innerText = 'Algorithm: Backtracing';
+            vis.abort();
+            initalizeBoard(currentDifficulty, algo)
+        } else if (e.target.id === 'algox') {
+            algo = 'AlgoX';
+            chosenAlgo.innerText = 'Algorithm: Knuths Algorithm X';
+            vis.abort();
+            initalizeBoard(currentDifficulty, algo)
+        } 
+    })
 
     // When the reset button is hit to reset the board on the most
     // recent difficulty
@@ -54,64 +73,17 @@ document.addEventListener("DOMContentLoaded", function () {
     reset.addEventListener('click', (e) => {
         if (currentDifficulty === undefined) {
             vis.abort();
-            initalizeBoard('easy');
+            initalizeBoard('easy', algo);
         } else if (e.target.id === 'reset') {
             vis.abort();
-            initalizeBoard(currentDifficulty);
+            initalizeBoard(currentDifficulty, algo);
         }
         counter.innerText = 'Iterations: 0';
-        timer.innerText = 'Time: 0ms'
-    }); 
+        timer.innerText = 'Time: 0ms';
+    }) 
 
     const solve = document.getElementById('solve-1')
     solve.addEventListener('click', () => {
         vis.visualizeAlgo();
     });
-
-
-    const matrix = [
-        [1, 0, 0, 0],
-        [0, 1, 1, 0],
-        [1, 0, 0, 1],
-        [0, 0, 1, 1],
-        [0, 1, 0, 0],
-        [0, 0, 1, 0]
-    ]
-
-    const onStep = e =>
-        console.log(`step[${e.stepIndex}]: ${e.partialSolution}`)
-
-    const onSolution = e =>
-        console.log(`solution[${e.solutionIndex}]: ${e.solution}`)
-
-    const dlx = new Dlx()
-    dlx.on('step', onStep)
-    dlx.on('solution', onSolution)
-    dlx.solve(matrix)
-
-    const PUZZLE = [
-        "8        ",
-        "  36     ",
-        " 7  9 2  ",
-        " 5   7   ",
-        "    457  ",
-        "   1   3 ",
-        "  1    68",
-        "  85   1 ",
-        " 9    4  "
-    ];
-    // what i need to do next is make a function that returns the puzzle in str 
-    // form. and pass it into the function below as a constant
-    let queue = [];
-    const onSearchStep = (internalRows, rowIndices) => {
-        const partialSolution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
-        queue.push(drawPartialSolution(partialSolution));
-    };
-    const onSolutionFound = (internalRows, rowIndices) => {
-        const solution = rowIndicesToSolution(PUZZLE, internalRows, rowIndices);
-        queue.push(drawSolution(solution));
-    };
-    const solutionGenerator = solve1(PUZZLE, onSearchStep, onSolutionFound);
-    solutionGenerator.next();
-    console.log(queue)
 });
