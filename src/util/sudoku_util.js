@@ -1,4 +1,7 @@
 const sudokuUtil = {
+    // This is to create the board default board on the screen.
+    // It also fills in the puzzle and sets the colors for the background
+    // and text
     createPuzzle: (arr) => {
         for(let i = 0; i < arr.length; i++) {
             for(let j = 0; j < arr[i].length; j++) {
@@ -20,6 +23,8 @@ const sudokuUtil = {
             };
         };
     },
+    // This clears the board so that when you reset no existing things from
+    // the last puzzle are still there.
     clearBoard: (num) => {
         for (let i = 0; i < num; i++) {
             for (let j = 0; j < num; j++) {
@@ -28,6 +33,7 @@ const sudokuUtil = {
             }
         }
     },
+    // Time calculator from milliseconds to real time.
     timeConversion: (millisec) => {
 
         let seconds = (millisec / 1000).toFixed(1);
@@ -48,6 +54,8 @@ const sudokuUtil = {
             return days + " days";
         }
     },
+    // This is used for knuths algorithm so that i take feed it the puzzle 
+    // structure that it is expecting
     algoPuzzleParser: (puzzle) => {
         let newPuzzle = [];
         for(let i = 0; i < puzzle.length; i++) {
