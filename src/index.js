@@ -10,14 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
     boardGrid.makeRows();
 
 
-    //Create the default sudoku on the grid
-    // let board = new Board('easy');
+    
+    // Create variable that will be assigned by eventListeners
     let board;
     let vis;
     let algo;
     let speed;
     let currentDifficulty = 'easy';
 
+    // Initialize a new board every time an event is clicked on the board
     const initalizeBoard = (diff, algo = 'Backtrace') => {
         speed = Math.abs(document.getElementById('slider-2').value - 101);
         board = new Board(diff);
@@ -26,9 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
         sudokuUtil.createPuzzle(board.puzzle);
         vis.initializeAlgo();
     }
+    //Create the default sudoku on the grid
     initalizeBoard('easy', algo);
 
     // When a difficulty is hit it will reset the board
+    // It was also set the difficulty on the page
     document.addEventListener('click', (e) => {
         const diff = document.getElementById('diff')
         if (e.target.id === 'easy') {
@@ -66,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
     // When the reset button is hit to reset the board on the most
-    // recent difficulty
+    // recent difficulty, and algorithm
     const reset = document.getElementById('reset');
     const counter = document.getElementById('counter');
     const timer = document.getElementById('time');
@@ -82,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         timer.innerText = 'Time: 0ms';
     }) 
 
+    // Solve the board
     const solve = document.getElementById('solve-1')
     solve.addEventListener('click', () => {
         vis.visualizeAlgo();

@@ -18,7 +18,8 @@ class Visualize {
         this.time = 0;
     }
 
-    // This is where we choose which algorithm is going to be solved an initialized
+    // This is where we choose which algorithm is going to be solved and initialized
+    // The structure of the solution received from each algorithm needs to be the same
     initializeAlgo() {
         if (this.algorithm === "Backtrace") {
             let solved = new Backtrace(_.cloneDeep(this.board.puzzle));
@@ -33,21 +34,27 @@ class Visualize {
         }
     }
 
+    // This is where we visualize the algorithm on the board everytime solved
+    // is clicked
     visualizeAlgo() {
 
         let i = 0;
+
+        // Enter a loopstep recurisve call, that will act as a setInterval
         const loopStep = () => {
             
+            // Base case to allow us to leave the function for a reset, 
+            // or exit the recursive call when we reach the last entry in the array
             if (i === this.orderedTraversal.length) {
                 return;
             } else if (this.reset === true) {
                 this.reset = false
                 return;
             }
-            let lastPos;
-            if (i !== 0) {
-                lastPos = this.orderedPositions[i - 1].parsePos();
-            }
+
+            // These are the positions and values that are going to be placed
+            // on the board. They are formatted specifically for this in the 
+            // algorithms
             const nextPos = this.orderedPositions[i].parsePos();
             const nextVal = this.orderedTraversal[i];
 
@@ -58,6 +65,8 @@ class Visualize {
                 const timer = document.getElementById('time');
                 const counter = document.getElementById('counter');
                 
+                // This allows us to change the counter, timer, and inner text
+                // of each element on the board
                 counter.innerText = `Iterations: ${this.count}`
                 timer.innerText = `Time: ${sudokuUtil.timeConversion(this.time)}`
                 if (nextVal === 0) {
@@ -66,11 +75,14 @@ class Visualize {
                     tile.innerText = `${nextVal}`;
                 }
 
+                // Add the cool styling so that each element looks like its
+                // apart of a proper visualizer
                 tile.classList.add('o-red')
                 setTimeout(() => {
                     tile.classList.remove('o-red');
                 }, 500)
         
+                // Set the tile value to its proper value
                 this.board.puzzle[cur_x][cur_y].val = nextVal;
                 this.count += 1
                 this.time += this.speed
@@ -79,11 +91,12 @@ class Visualize {
             }, this.speed)
         }
         loopStep();
-    }
+    };
 
+    // This is used to abort out of the recursive call in order to reset the board
     abort() {   
-        this.reset = true
-    }
+        this.reset = true;
+    };
 }
 
 Array.prototype.parsePos = function () {
