@@ -53,14 +53,15 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener('click', (e) => {
         const chosenAlgo = document.getElementById('chosen-algo')
         if (e.target.id === 'backtrace') {
-            debugger
             algo = 'Backtrace';
             chosenAlgo.innerText = 'Algorithm: Backtracing';
             vis.abort();
+            initalizeBoard(currentDifficulty, algo)
         } else if (e.target.id === 'algox') {
             algo = 'AlgoX';
             chosenAlgo.innerText = 'Algorithm: Knuths Algorithm X';
             vis.abort();
+            initalizeBoard(currentDifficulty, algo)
         } 
     })
 
