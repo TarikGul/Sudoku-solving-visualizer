@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         vis.initializeAlgo();
     }
     initalizeBoard('easy', algo);
+
     // When a difficulty is hit it will reset the board
     document.addEventListener('click', (e) => {
         const diff = document.getElementById('diff')
@@ -48,17 +49,19 @@ document.addEventListener("DOMContentLoaded", function () {
         } 
     });
 
-    // When an algorithm is clicked on to change the current algo
+    // When an algorithm is clicked on to change the current algo, and reset board
     document.addEventListener('click', (e) => {
         const chosenAlgo = document.getElementById('chosen-algo')
         if (e.target.id === 'backtrace') {
             algo = 'Backtrace';
             chosenAlgo.innerText = 'Algorithm: Backtracing';
-            initalizeBoard(currentDifficulty, algo)
+            vis.abort();
+            initalizeBoard(currentDifficulty, algo);
         } else if (e.target.id === 'algox') {
             algo = 'AlgoX';
-            chosenAlgo.innerText = 'Algorithm: Knuths Algorithm X'
-            initalizeBoard(currentDifficulty, algo)
+            chosenAlgo.innerText = 'Algorithm: Knuths Algorithm X';
+            vis.abort();
+            initalizeBoard(currentDifficulty, algo);
         } 
     })
 
@@ -76,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
             initalizeBoard(currentDifficulty, algo);
         }
         counter.innerText = 'Iterations: 0';
-        timer.innerText = 'Time: 0ms'
+        timer.innerText = 'Time: 0ms';
     }); 
 
     const solve = document.getElementById('solve-1')

@@ -166,6 +166,34 @@
     .red {
         color: red;
     }
+
+     .data-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .data-container-top {
+        display: flex;
+        justify-content: center;
+    }
+
+    .data-container-top > div {
+        padding: 20px;
+    }
+
+    .data-container-bottom {
+        display: flex;
+        justify-content: center;
+    }
+
+    .data-container-bottom > div {
+        padding: 20px;
+    }
+
+    .counter-container {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media only screen and (min-width: 480px) { 
