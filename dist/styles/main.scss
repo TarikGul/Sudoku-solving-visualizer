@@ -19,6 +19,10 @@
         height: 13%;
     }
 
+    .instructions {
+        display: none;
+    }
+
     .sudoku-board {
         display: flex;
         flex-direction: column;
@@ -141,10 +145,12 @@
     .algo-button {
         height: 40px;
         margin: 0;
+        border: none;
+        border-radius: 3px;
+        outline: none;
     }
 
     .algo-buttons-container {
-        // position: relative;
         display: flex;
 
         justify-content: space-evenly;
@@ -356,7 +362,16 @@
         height: 13%;
     }
 
+    .instructions {
+        position: absolute;
+        width: 300px;
+        height: 400px;
+        left: 3%;
+        font-size: 18px;
+    }
+
     .sudoku-main-container {
+        position: relative;
         display: flex;
         justify-content: center;
     }
