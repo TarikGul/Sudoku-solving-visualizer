@@ -244,7 +244,8 @@
         height: 60px;
         width: 60px;
         text-align: center;
-        line-height: 50px;
+        font-size: 24px;
+        line-height: 55px;
     }
 
     .gray {
@@ -353,12 +354,23 @@
     .algo-button {
         height: 40px;
         margin: 0;
+        border: none;
+        border-radius: 3px;
+        outline: none;
+    }
+
+    .algo-button:hover {
+        background-color: #A0C3E2;
     }
 
     .algo-buttons-container {
         position: relative;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
+    }
+
+    .algo-buttons-container > div {
+        padding: 20px;
     }
 
     .pick-algo {

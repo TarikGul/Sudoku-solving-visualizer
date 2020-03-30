@@ -56,12 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
             algo = 'Backtrace';
             chosenAlgo.innerText = 'Algorithm: Backtracing';
             vis.abort();
-            initalizeBoard(currentDifficulty, algo);
         } else if (e.target.id === 'algox') {
             algo = 'AlgoX';
             chosenAlgo.innerText = 'Algorithm: Knuths Algorithm X';
             vis.abort();
-            initalizeBoard(currentDifficulty, algo);
         } 
     })
 
