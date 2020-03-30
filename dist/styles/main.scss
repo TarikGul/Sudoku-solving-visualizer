@@ -553,11 +553,18 @@
     .data-container-bottom {
         display: flex;
         justify-content: center;
-        padding: 30px;
     }
 
     .data-container-bottom > div {
-        padding: 20px;
+       
+    }
+
+    .ui-field-contain {
+        padding-right: 40px;
+    }
+
+    .time {
+        padding-top: 5px;
     }
 
     .counter-container {
