@@ -2,8 +2,7 @@
 @charset "utf-8";
 
 @media only screen and (min-width: 480px) {
-	html, body, div, span, applet, object, iframe,
-	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	html, body, div, span, applet, object, iframe, h2, h3, h4, h5, h6, p, blockquote, pre,
 	a, abbr, acronym, address, big, cite, code,
 	del, dfn, em, img, ins, kbd, q, s, samp,
 	small, strike, strong, sub, sup, tt, var,
@@ -46,6 +45,16 @@
 	table {
 		border-collapse: collapse;
 		border-spacing: 0;
+	}
+
+	h1 {
+		font: 600 1.5em/1 'Raleway', sans-serif;
+		color: rgba(0,0,0,.5);
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: .5em;
+		top: 25%;
+		width: 100%;
 	}
 }
 
@@ -180,4 +189,5 @@
 	a {
 		text-decoration: none
 	}
+
 }

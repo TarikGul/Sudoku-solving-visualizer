@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let board;
     let vis;
     let algo;
-    let currentDifficulty;
     let speed;
+    let currentDifficulty = 'easy';
 
     const initalizeBoard = (diff, algo = 'Backtrace') => {
         speed = Math.abs(document.getElementById('slider-2').value - 101);
@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener('click', (e) => {
         const chosenAlgo = document.getElementById('chosen-algo')
         if (e.target.id === 'backtrace') {
+            debugger
             algo = 'Backtrace';
             chosenAlgo.innerText = 'Algorithm: Backtracing';
             vis.abort();
@@ -78,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         counter.innerText = 'Iterations: 0';
         timer.innerText = 'Time: 0ms';
-    }); 
+    }) 
 
     const solve = document.getElementById('solve-1')
     solve.addEventListener('click', () => {

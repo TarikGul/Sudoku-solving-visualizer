@@ -373,7 +373,13 @@
         padding: 20px;
     }
 
+    .pick-algo-container {
+        display: flex;
+        justify-content: center;
+    }
+
     .pick-algo {
+        width: 50%;
         padding: 20px;
         padding-bottom: 5px;
         text-align: center;
