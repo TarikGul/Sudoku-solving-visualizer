@@ -11,21 +11,21 @@
     <div class="body">
         <!-- This is the main container portion of the html -->
         <div class="main-container">
-                    <div class="pick-algo"> Pick an algorithm </div>
-                    <div class="algo-buttons-container">
-                        <button class="algo-button">Backtracing</button>
-                        <button class="algo-button">Algorithm X</button>
+                <div class="pick-algo"> Pick an algorithm </div>
+                <div class="algo-buttons-container">
+                    <button class="algo-button">Backtracing</button>
+                    <button class="algo-button">Algorithm X</button>
+                </div>
+                <div class="algo-diff-container">
+                    <div class="difficulty-container">
+                        <button class="diff-button" id="easy">Easy</button>
+                        <button class="diff-button" id="medium">Medium</button>
+                        <button class="diff-button" id="hard">Hard</button>
                     </div>
-                    <div class="algo-diff-container">
-                        <div class="difficulty-container">
-                            <button class="diff-button" id="easy">Easy</button>
-                            <button class="diff-button" id="medium">Medium</button>
-                            <button class="diff-button" id="hard">Hard</button>
-                        </div>
-                    </div>
+                </div>
                 <div class="sudoku-main-container">
                     <div class="sudoku-board">
-
+                    
                     </div>
                 </div>
                 <div class="outer-solve-reset-container">
@@ -38,15 +38,29 @@
                         </div>
                     </div>
                 </div>
-                <div class="ui-field-contain">
-                    <label for="slider-2">Speed:</label>
-                    <input type="range" name="slider-2" id="slider-2" value="75" min="0" max="100">
-                </div>
-                <div class="counter" id="counter">
-                   Iterations: 0 
-                </div>
-                <div class="time" id="time">
-                    Time: 0ms
+                <div class="data-container">
+                    <div class="data-container-top">
+                        <div class="chosen-algo">
+                            Algorithm: Knuths Algorithm X
+                        </div>
+                        <div class="chosen-difficulty" id="diff">
+                            Difficulty: Easy
+                        </div>
+                    </div>
+                    <div class="data-container-bottom">
+                        <div class="ui-field-contain">
+                            <label for="slider-2">Speed:</label>
+                            <input type="range" name="slider-2" id="slider-2" value="75" min="0" max="100">
+                        </div>
+                        <div class="counter-container">
+                            <div class="counter" id="counter">
+                                Iterations: 0
+                            </div>
+                            <div class="time" id="time">
+                                Time: 0ms
+                            </div>
+                        </div>
+                    </div>
                 </div>
         </div> 
     </div>

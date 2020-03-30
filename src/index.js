@@ -29,16 +29,20 @@ document.addEventListener("DOMContentLoaded", function () {
     initalizeBoard('easy');
     // When a difficulty is hit it will reset the board
     document.addEventListener('click', (e) => {
+        const diff = document.getElementById('diff')
         if (e.target.id === 'easy') {
             currentDifficulty = 'easy';
+            diff.innerText = `Difficulty: Easy`
             vis.abort();
             initalizeBoard('easy');
         } else if (e.target.id === 'medium') {
             currentDifficulty = 'medium';
+            diff.innerText = `Difficulty: Medium`
             vis.abort();
             initalizeBoard('medium');
         } else if (e.target.id === 'hard') {
             currentDifficulty = 'hard';
+            diff.innerText = `Difficulty: Hard`
             vis.abort();
             initalizeBoard('hard');
         } 
