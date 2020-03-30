@@ -324,6 +324,11 @@
     input[type=range]:focus::-ms-fill-upper {
         background: #367ebd;
     }
+
+    .o-red {
+        background-color: #ec6e6e;
+        opacity: 30%;
+    }
 }
 
 @media only screen and (min-width: 480px) { 
@@ -693,5 +698,10 @@
 
     input[type=range]:focus::-ms-fill-upper {
         background: #367ebd;
+    }
+
+    .o-red {
+        background-color: #ec6e6e;
+        opacity: 30%;
     }
 }

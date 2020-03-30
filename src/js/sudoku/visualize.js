@@ -55,7 +55,6 @@ class Visualize {
             
             setTimeout(() => {
                 const tile = document.getElementById(nextPos);
-                const lastTile = document.getElementById(lastPos)
                 const timer = document.getElementById('time');
                 const counter = document.getElementById('counter');
                 
@@ -67,14 +66,11 @@ class Visualize {
                     tile.innerText = `${nextVal}`;
                 }
 
-                tile.style.background = 'red';
-                
-                if (lastPos !== undefined) {
-                    lastTile.style.background = '';
-                }
-                if (i === this.orderedPositions.length) {
-                    tile.style.background = '';
-                }
+                tile.classList.add('o-red')
+                setTimeout(() => {
+                    tile.classList.remove('o-red');
+                }, 500)
+        
                 this.board.puzzle[cur_x][cur_y].val = nextVal;
                 this.count += 1
                 this.time += this.speed
