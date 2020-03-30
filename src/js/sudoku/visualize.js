@@ -44,6 +44,10 @@ class Visualize {
                 this.reset = false
                 return;
             }
+            let lastPos;
+            if (i !== 0) {
+                lastPos = this.orderedPositions[i - 1].parsePos();
+            }
             const nextPos = this.orderedPositions[i].parsePos();
             const nextVal = this.orderedTraversal[i];
 
@@ -51,15 +55,25 @@ class Visualize {
             
             setTimeout(() => {
                 const tile = document.getElementById(nextPos);
-                const timer = document.getElementById('time')
+                const lastTile = document.getElementById(lastPos)
+                const timer = document.getElementById('time');
                 const counter = document.getElementById('counter');
-
+                
                 counter.innerText = `Iterations: ${this.count}`
                 timer.innerText = `Time: ${sudokuUtil.timeConversion(this.time)}`
                 if (nextVal === 0) {
                     tile.innerText = '';
                 } else {
                     tile.innerText = `${nextVal}`;
+                }
+
+                tile.style.background = 'red';
+                
+                if (lastPos !== undefined) {
+                    lastTile.style.background = '';
+                }
+                if (i === this.orderedPositions.length) {
+                    tile.style.background = '';
                 }
                 this.board.puzzle[cur_x][cur_y].val = nextVal;
                 this.count += 1
