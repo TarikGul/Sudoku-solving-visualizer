@@ -37,6 +37,7 @@ class Visualize {
 
         let i = 0;
         const loopStep = () => {
+            
             if (i === this.orderedTraversal.length) {
                 return;
             } else if (this.reset === true) {
@@ -52,6 +53,7 @@ class Visualize {
                 const tile = document.getElementById(nextPos);
                 const timer = document.getElementById('time')
                 const counter = document.getElementById('counter');
+
                 counter.innerText = `Iterations: ${this.count}`
                 timer.innerText = `Time: ${sudokuUtil.timeConversion(this.time)}`
                 if (nextVal === 0) {
