@@ -508,6 +508,7 @@
         border: none;
         border-radius: 3px;
         outline: none;
+        cursor: pointer;
     }
 
     .algo-button:hover {
@@ -726,5 +727,17 @@
     .o-red {
         background-color: #ec6e6e;
         opacity: 30%;
+    }
+
+    .welcome {
+        font-size: 20px;
+        text-align: center;
+        line-height: 25px;
+        font-weight: 600;
+        border-bottom: 1px solid gray;
+    }
+    
+    .steps > div {
+        padding-top: 10px;
     }
 }
