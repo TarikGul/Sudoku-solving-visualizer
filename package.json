@@ -17,7 +17,7 @@
     "deep-equal-in-any-order": "^1.0.25",
     "dlxlib": "^1.0.3",
     "event-emitter": "^0.3.5",
-    "jsdoc": "^3.6.3",
+    "jsdoc": "^3.6.11",
     "lodash": "^4.17.21",
     "regenerator-runtime": "^0.13.5",
     "webpack": "^4.42.0",
